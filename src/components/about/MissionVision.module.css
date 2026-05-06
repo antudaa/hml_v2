@@ -1,0 +1,219 @@
+.section {
+  position: relative;
+  background-color: #f4f7fc;
+  padding: 4rem 1rem;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(244 247 252 / 100%);
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  border-radius: 1.5rem;
+  background: rgb(255 255 255 / 90%);
+  padding: 1.5rem;
+  box-shadow: 0 1rem 2rem rgb(15 23 42 / 12%);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+}
+
+.ceoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.portraitWrap {
+  position: relative;
+  width: min(100%, 12.5rem);
+  aspect-ratio: 4 / 5;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgb(15 23 42 / 15%);
+}
+
+.portrait {
+  object-fit: cover;
+}
+
+.ceoCopy {
+  font-family: "Helvetica Neue Local", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #4870a0;
+}
+
+.title {
+  margin-top: 0.5rem;
+  font-size: clamp(1.375rem, 1.1rem + 1.1vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0a1f44;
+}
+
+.message {
+  margin-top: 0.75rem;
+}
+
+.paragraph {
+  font-size: clamp(0.82rem, 0.76rem + 0.28vw, 1rem);
+  line-height: 1.45;
+  color: #0a1f44;
+}
+
+.paragraph + .paragraph {
+  margin-top: 0.5rem;
+}
+
+.duoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  background: rgb(255 255 255 / 90%);
+  padding: 1.5rem;
+  box-shadow: 0 1rem 2rem rgb(15 23 42 / 12%);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+  font-family: "Helvetica Neue Local", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.iconLarge {
+  width: 3.375rem;
+  height: 3.375rem;
+  color: #4870a0;
+}
+
+.infoTitle {
+  font-size: clamp(1.125rem, 0.95rem + 0.8vw, 1.8rem);
+  font-weight: 800;
+  color: #25466e;
+}
+
+.accent {
+  color: #4870a0;
+}
+
+.divider {
+  width: min(14rem, 40%);
+  height: 0.1875rem;
+  background: #bfcde2;
+  opacity: 0.7;
+}
+
+.iconSmall {
+  width: 1.625rem;
+  height: 1.625rem;
+  color: #4870a0;
+}
+
+.infoBody {
+  padding-inline: 0.5rem;
+  font-size: clamp(0.85rem, 0.78rem + 0.3vw, 1rem);
+  line-height: 1.45;
+  color: #0a1f44;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(2rem);
+  animation: revealUp 0.8s ease-out forwards;
+}
+
+.delayOne {
+  animation-delay: 0.1s;
+}
+
+.delayTwo {
+  animation-delay: 0.2s;
+}
+
+.delayThree {
+  animation-delay: 0.3s;
+}
+
+.delayFour {
+  animation-delay: 0.4s;
+}
+
+.delayFive {
+  animation-delay: 0.5s;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 40rem) {
+  .section {
+    padding: 5rem 1.5rem;
+  }
+
+  .card,
+  .infoCard {
+    padding: 1.75rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .ceoGrid {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .portraitWrap {
+    width: min(100%, 13.75rem);
+    margin-inline: 0;
+  }
+
+  .ceoCopy {
+    text-align: left;
+  }
+
+  .duoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .section {
+    padding: 5rem 2rem;
+  }
+
+  .ceoGrid {
+    grid-template-columns: 0.7fr 1.3fr;
+  }
+}

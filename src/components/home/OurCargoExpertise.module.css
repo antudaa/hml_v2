@@ -1,0 +1,242 @@
+.section {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  background: #04131f;
+}
+
+.sideRail {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  background: #094d82;
+  padding-top: 10vh;
+}
+
+.sideLabel {
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-shadow:
+    2px 0 0 rgb(0 0 0 / 100%),
+    0 1px 4px rgb(0 0 0 / 85%);
+}
+
+.mobileHeader {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #094d82;
+  padding: 1rem 1.25rem;
+}
+
+.mobileHeaderText {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-shadow:
+    2px 0 0 rgb(0 0 0 / 100%),
+    0 1px 4px rgb(0 0 0 / 85%);
+}
+
+.panels {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel {
+  position: relative;
+  min-height: 0;
+  flex: 1 1 0%;
+  cursor: pointer;
+  overflow: hidden;
+  border-bottom: 0.125rem solid rgb(100 116 139 / 60%);
+  box-shadow: 5px 0 15px -5px rgb(0 0 0 / 50%);
+  transition: flex-grow 0.8s ease-in-out;
+}
+
+.panelActive {
+  flex-grow: 7;
+}
+
+.panelInactive {
+  flex-grow: 1;
+}
+
+.panelImage {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: rgb(0 0 0 / 20%);
+}
+
+.title {
+  display: block;
+  margin-bottom: 0.75rem;
+  padding-inline: 1.5rem;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    2px 2px 2px rgb(0 0 0 / 100%),
+    4px 4px 8px rgb(0 0 0 / 85%);
+}
+
+.content {
+  width: 100%;
+  background: rgb(9 78 130 / 52%);
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.5rem);
+  transition:
+    max-height 0.5s ease-in-out,
+    opacity 0.35s ease-in-out,
+    padding 0.35s ease-in-out,
+    transform 0.35s ease-in-out;
+}
+
+.contentVisible {
+  max-height: 22rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.description {
+  max-width: 80rem;
+  text-align: justify;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: #fff;
+  text-shadow:
+    2px 0 0 rgb(0 0 0 / 100%),
+    0 1px 4px rgb(0 0 0 / 85%);
+}
+
+.buttonRow {
+  margin-top: 1rem;
+}
+
+.actionButton {
+  border-color: rgb(255 255 255 / 70%);
+  background: transparent;
+  color: #fff;
+}
+
+.actionButton:hover {
+  border-color: #fff;
+  background: rgb(255 255 255 / 10%);
+}
+
+@media (min-width: 64rem) {
+  .section {
+    min-height: 100%;
+  }
+
+  .sideRail {
+    display: flex;
+  }
+
+  .sideLabel {
+    transform: rotate(-90deg);
+    font-size: 2.25rem;
+    font-weight: 400;
+  }
+
+  .mobileHeader {
+    display: none;
+  }
+
+  .panels {
+    flex-direction: row;
+  }
+
+  .panel {
+    min-height: 100%;
+    flex: 1 1 0%;
+    border-right: 0.125rem solid rgb(100 116 139 / 60%);
+    border-bottom: 0;
+    transition: flex-grow 1s ease-in-out;
+  }
+
+  .panelActive {
+    flex-grow: 12;
+  }
+
+  .panelInactive {
+    flex-grow: 1;
+  }
+
+  .overlay {
+    justify-content: center;
+  }
+
+  .title {
+    margin-bottom: 0.5rem;
+    padding-right: 3rem;
+    padding-left: 1.5rem;
+    font-size: 3rem;
+  }
+
+  .titleCollapsed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-bottom: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center;
+    white-space: nowrap;
+  }
+
+  .content {
+    transform: translateY(-0.5rem);
+    max-height: none;
+    opacity: 0;
+    pointer-events: none;
+    overflow: visible;
+    padding: 1.25rem 1.5rem 1.5rem;
+    transition:
+      opacity 0.5s ease-in-out,
+      transform 0.5s ease-in-out;
+  }
+
+  .contentVisible {
+    max-height: none;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .description {
+    max-width: 80rem;
+    max-height: 18.75rem;
+    font-size: 1.125rem;
+  }
+}

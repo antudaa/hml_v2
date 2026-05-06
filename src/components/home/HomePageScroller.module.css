@@ -1,0 +1,17 @@
+.viewport {
+  height: var(--home-viewport-height);
+  min-height: var(--home-viewport-height);
+  overflow-y: auto;
+  scroll-snap-type: y proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.panel {
+  display: block;
+  width: 100%;
+  height: var(--home-viewport-height);
+  min-height: var(--home-viewport-height);
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}

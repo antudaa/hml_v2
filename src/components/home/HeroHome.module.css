@@ -1,0 +1,232 @@
+.heroSection {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.heroInner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.backgroundVideo {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  background: hsl(var(--hero-overlay) / 0.2);
+}
+
+.contentWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1rem;
+  padding-bottom: 10rem;
+}
+
+.heroReveal {
+  width: 100%;
+  max-width: 100%;
+  opacity: 0;
+  animation: heroFadeIn 0.5s ease-out forwards;
+}
+
+.headingInner {
+  margin-inline: auto;
+  margin-bottom: 7rem;
+  width: fit-content;
+  max-width: 100%;
+  text-align: left;
+}
+
+.kicker {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--inverse));
+}
+
+.kickerShadow {
+  text-shadow: 3px 3px 6px rgb(0 0 0 / 70%);
+}
+
+.title {
+  display: block;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--inverse));
+}
+
+.titleShadow {
+  text-shadow: 3px 3px 8px rgb(0 0 0 / 70%);
+}
+
+.titleText {
+  display: block;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.firstLetter {
+  display: inline-block;
+  border-radius: 0.125rem;
+  padding-inline: 0.25rem;
+  font-weight: 800;
+  color: hsl(var(--primary));
+}
+
+.statsRow {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  left: 0;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-inline: 1rem;
+}
+
+.statCard {
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  column-gap: 0.75rem;
+  min-height: 5.5rem;
+  height: 5.5rem;
+  width: 100%;
+  max-width: 24rem;
+  align-items: center;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  background: hsl(var(--primary) / 0.7);
+  padding: 1rem;
+}
+
+.statIconWrap {
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  flex-shrink: 0;
+}
+
+.statIcon {
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.statLabel {
+  display: block;
+  white-space: pre-line;
+  line-height: 1.25;
+  font-weight: 600;
+  color: hsl(var(--inverse));
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1.875rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 40rem) {
+  .contentWrap {
+    padding-inline: 1.5rem;
+    padding-bottom: 9rem;
+  }
+
+  .kicker {
+    font-size: 1.875rem;
+  }
+
+  .titleText {
+    font-size: 3.25rem;
+  }
+
+  .statsRow {
+    padding-inline: 1.5rem;
+  }
+
+  .statCard {
+    width: 18rem;
+    max-width: 18rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .contentWrap {
+    padding-inline: 5%;
+    padding-bottom: 8rem;
+  }
+
+  .headingInner {
+    margin-bottom: 0.25rem;
+  }
+
+  .kicker {
+    font-size: 2.25rem;
+  }
+
+  .title {
+    margin-top: -0.5rem;
+    font-size: 2.25rem;
+    font-weight: 400;
+  }
+
+  .statsRow {
+    bottom: 0;
+    padding-inline: 5%;
+  }
+}
+
+@media (min-width: 64rem) {
+  .contentWrap {
+    padding-bottom: 0;
+  }
+
+  .title {
+    margin-top: -1.25rem;
+    margin-left: -0.125rem;
+    font-size: 4.5rem;
+    font-weight: 700;
+  }
+
+  .titleText {
+    font-size: 5.125rem;
+  }
+
+  .statsRow {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .statCard {
+    margin-inline: 0;
+  }
+}

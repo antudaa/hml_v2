@@ -1,26 +1,269 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Helvetica Neue Local";
+  src:
+    local("Helvetica Neue Thin"),
+    local("HelveticaNeue-Thin");
+  font-style: normal;
+  font-weight: 100 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Local";
+  src:
+    local("Helvetica Neue Light"),
+    local("HelveticaNeue-Light");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Local";
+  src:
+    local("Helvetica Neue"),
+    local("HelveticaNeue"),
+    local("Helvetica Neue Roman"),
+    local("HelveticaNeue-Roman");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Local";
+  src:
+    local("Helvetica Neue Medium"),
+    local("HelveticaNeue-Medium");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Local";
+  src:
+    local("Helvetica Neue Bold"),
+    local("HelveticaNeue-Bold");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Local";
+  src:
+    local("Helvetica Neue Black"),
+    local("HelveticaNeue-Black");
+  font-style: normal;
+  font-weight: 800 900;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;
+  --foreground: 206 71% 14%;
+  --inverse: 0 0% 100%;
+  --muted: 205 45% 96%;
+  --muted-foreground: 207 28% 38%;
+  --card: 0 0% 100%;
+  --card-foreground: 206 71% 14%;
+  --border: 205 32% 88%;
+  --primary: 206 87% 27%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 39 49% 57%;
+  --accent-foreground: 206 71% 14%;
+  --hero-overlay: 0 0% 0%;
+  --site-header-height: 6rem;
+  --home-viewport-height: calc(100svh - var(--site-header-height));
+}
+
+@theme {
+  --breakpoint-xs: 22.5rem;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+  --breakpoint-3xl: 120rem;
+  --breakpoint-qhd: 160rem;
+  --breakpoint-display4k: 240rem;
+  --breakpoint-display8k: 480rem;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.375rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.75rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.875rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 2rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2.125rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.375rem;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 2.75rem;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1.08;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1.02;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 0.98;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-inverse: hsl(var(--inverse));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-border: hsl(var(--border));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-hero-overlay: hsl(var(--hero-overlay));
+  --font-sans: "Helvetica Neue Local", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Helvetica Neue Local", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground antialiased;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  line-height: var(--text-5xl--line-height);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  line-height: var(--text-4xl--line-height);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+  line-height: var(--text-3xl--line-height);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
+}
+
+h5 {
+  font-size: var(--text-xl);
+  line-height: var(--text-xl--line-height);
+}
+
+h6 {
+  font-size: var(--text-lg);
+  line-height: var(--text-lg--line-height);
+}
+
+p,
+li,
+dd {
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+}
+
+small {
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.18);
+}
+
+@media (min-width: 22.5rem) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 40rem) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
+@media (min-width: 48rem) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 96rem) {
+  :root {
+    --site-header-height: 8rem;
+  }
+
+  html {
+    font-size: 16.5px;
+  }
+}
+
+@media (min-width: 120rem) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 160rem) {
+  html {
+    font-size: 17.5px;
+  }
+}
+
+@media (min-width: 240rem) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 480rem) {
+  html {
+    font-size: 19px;
+  }
 }

@@ -1,0 +1,235 @@
+.section {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+}
+
+.inner {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.backgroundVideo {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  background: rgb(0 0 0 / 20%);
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding-bottom: 0;
+}
+
+.headingWrap {
+  width: 100%;
+  max-width: 100%;
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+.heading {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.headingTop {
+  display: block;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    2px 2px 2px rgb(0 0 0 / 100%),
+    4px 4px 6px rgb(0 0 0 / 85%);
+}
+
+.headingBottom {
+  display: block;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    2px 2px 2px rgb(0 0 0 / 100%),
+    4px 4px 8px rgb(0 0 0 / 85%);
+}
+
+.fleetWrap {
+  width: 100%;
+  padding-bottom: 0;
+}
+
+.fleetRow {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.fleetGroup {
+  width: 100%;
+}
+
+.titleRow {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  padding-inline: 1rem;
+}
+
+.groupTitle {
+  width: min(100%, 15.625rem);
+  white-space: pre-line;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  background: rgb(255 255 255 / 20%);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+}
+
+.vesselBand {
+  display: flex;
+  min-height: 4rem;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: #094d82;
+  padding: 0.875rem 1rem;
+  color: #fff;
+}
+
+.vesselList {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.vesselLink {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  text-wrap: balance;
+}
+
+.vesselLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.shipIcon {
+  margin-top: 0.125rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.separator {
+  display: none;
+  height: 2.5rem;
+  width: 0.125rem;
+  background: rgb(255 255 255 / 70%);
+}
+
+@media (min-width: 48rem) {
+  .content {
+    padding-top: 4rem;
+    padding-bottom: 0;
+  }
+
+  .headingWrap {
+    padding-inline: 5%;
+  }
+
+  .headingTop {
+    font-size: 3rem;
+  }
+
+  .headingBottom {
+    font-size: 4.5rem;
+  }
+
+  .heading {
+    margin-top: 7rem;
+  }
+
+  .fleetWrap {
+    padding-bottom: 0;
+  }
+
+  .fleetRow {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .titleRow {
+    flex-direction: row;
+  }
+
+  .vesselBand {
+    height: 4rem;
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-evenly;
+    padding: 1rem;
+  }
+
+  .vesselList {
+    width: auto;
+    justify-content: space-between;
+  }
+
+  .vesselLink {
+    white-space: nowrap;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .shipIcon {
+    margin-top: 0.25rem;
+  }
+
+  .separator {
+    display: block;
+  }
+}
