@@ -211,3 +211,39 @@ export function AnchorIcon({ className, ...props }: IconProps) {
     </svg>
   );
 }
+
+export function DownloadIcon({ className, ...props }: IconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={cn("size-5", className)}
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M12 4.5v9m0 0 3.5-3.5M12 13.5 8.5 10M5 16.5v1.25C5 18.44 5.56 19 6.25 19h11.5c.69 0 1.25-.56 1.25-1.25V16.5"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+}
+
+export function PlayIcon({ className, ...props }: IconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={cn("size-7", className)}
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M8 6.5v11l9-5.5-9-5.5Z" />
+    </svg>
+  );
+}

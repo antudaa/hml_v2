@@ -1,0 +1,152 @@
+.page {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  background: #fff;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background: #0b2d4a;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 32%);
+}
+
+.heroContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 1rem 2rem;
+}
+
+.heroTitle {
+  margin: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.contentSection {
+  flex: 1;
+  background: #094d82;
+  color: #fff;
+}
+
+.contentShell {
+  width: min(100%, 72rem);
+  margin-inline: auto;
+  padding: 2.5rem 1rem 3rem;
+}
+
+.headerBlock {
+  margin-bottom: 1rem;
+}
+
+.eyebrow {
+  color: rgb(255 255 255 / 82%);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.description {
+  margin-top: 0.35rem;
+  color: rgb(255 255 255 / 72%);
+  font-size: 0.75rem;
+}
+
+.storyHeading {
+  margin: 0 0 1rem;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+.story {
+  margin: 0;
+  color: rgb(255 255 255 / 92%);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.metaList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.metaItem {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.metaLabel {
+  width: 5rem;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.metaValue {
+  color: rgb(255 255 255 / 92%);
+}
+
+@media (min-width: 40rem) {
+  .heroContent {
+    padding-inline: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .contentShell {
+    padding-inline: 1.5rem;
+  }
+
+  .heroTitle {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .heroContent {
+    padding-inline: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .contentShell {
+    padding: 3.5rem 2rem 4rem;
+  }
+
+  .contentGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+}

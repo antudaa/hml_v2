@@ -1,0 +1,173 @@
+.section {
+  position: relative;
+  height: 36vh;
+  min-height: 20rem;
+  width: 100%;
+  margin: -1.5rem 0 2.5rem;
+  flex: none;
+  overflow: hidden;
+  background: #fff;
+}
+
+.inner {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding-inline: 0;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.track {
+  margin-left: -0.75rem;
+}
+
+.item {
+  margin-inline: auto;
+  flex-basis: 100%;
+  padding-left: 0.75rem;
+}
+
+.cardButton {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: left;
+}
+
+.card {
+  height: 100%;
+  overflow: hidden;
+  border: 0.0625rem solid rgb(9 78 130 / 52%);
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+}
+
+.cardHeader {
+  position: relative;
+  padding: 0;
+}
+
+.cardMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+.cardOverlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 50%), rgb(0 0 0 / 10%), transparent);
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.card:hover .cardOverlay {
+  opacity: 1;
+}
+
+.cardTitleWrap {
+  pointer-events: none;
+  position: absolute;
+  inset-inline: 0;
+  top: -0.5rem;
+  z-index: 10;
+  height: 37.5%;
+}
+
+.cardTitleBand {
+  pointer-events: auto;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: rgb(9 78 130 / 52%);
+  backdrop-filter: blur(0.125rem);
+}
+
+.cardTitle {
+  display: -webkit-box;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  color: rgb(255 255 255 / 95%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.controls {
+  pointer-events: none;
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 0.5rem;
+}
+
+.controlSlot {
+  pointer-events: auto;
+}
+
+.navButton {
+  height: 2.25rem;
+  width: 2.25rem;
+  border: 0;
+  border-radius: 999rem;
+  background: rgb(255 255 255 / 90%);
+  color: #094d82;
+  box-shadow: 0 0.125rem 0.5rem rgb(15 23 42 / 18%);
+}
+
+.navButton:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+@media (min-width: 40rem) {
+  .item {
+    flex-basis: 50%;
+  }
+
+  .card {
+    box-shadow: 0 0.125rem 0.25rem rgb(15 23 42 / 10%);
+    transition: box-shadow 160ms ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 0.25rem 0.75rem rgb(15 23 42 / 18%);
+  }
+}
+
+@media (min-width: 48rem) {
+  .track {
+    margin-left: -1.5rem;
+  }
+
+  .item {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .item {
+    flex-basis: 33.333%;
+  }
+}

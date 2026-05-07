@@ -10,13 +10,15 @@
   z-index: 1;
   width: 100%;
   flex: 1;
-  padding: 6rem 1rem 2.5rem;
+  padding: 6rem clamp(1rem, 4vw, 3.5rem) 2.5rem;
 }
 
 .layout {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .intro {
@@ -24,13 +26,13 @@
 }
 
 .eyebrow {
-  font-size: clamp(1.25rem, 1rem + 1.2vw, 2.5rem);
+  font-size: clamp(1.25rem, 0.95rem + 1.5vw, 3rem);
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .title {
-  font-size: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
+  font-size: clamp(2.5rem, 1.55rem + 4.2vw, 6rem);
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
@@ -38,8 +40,8 @@
 
 .description {
   margin-top: 1rem;
-  max-width: 40rem;
-  font-size: clamp(0.95rem, 0.86rem + 0.3vw, 1.05rem);
+  max-width: 46rem;
+  font-size: clamp(0.95rem, 0.8rem + 0.55vw, 1.4rem);
   line-height: 1.6;
   font-weight: 500;
   color: rgb(0 0 0 / 85%);
@@ -92,14 +94,14 @@
   min-height: 1.5rem;
   align-items: center;
   margin-bottom: 0.25rem;
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 0.98rem + 0.4vw, 1.75rem);
   line-height: 1;
   font-weight: 600;
   color: rgb(0 0 0 / 90%);
 }
 
 .event {
-  font-size: clamp(0.9rem, 0.82rem + 0.22vw, 1rem);
+  font-size: clamp(0.95rem, 0.82rem + 0.32vw, 1.2rem);
   line-height: 1.6;
   font-weight: 500;
   color: rgb(0 0 0 / 90%);
@@ -145,18 +147,20 @@
 
 @media (min-width: 40rem) {
   .shell {
-    padding: 7rem 1.5rem 2.75rem;
+    padding-top: 7rem;
+    padding-bottom: 2.75rem;
   }
 }
 
 @media (min-width: 64rem) {
   .shell {
-    padding: 8rem 2.5rem 3rem;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
   }
 
   .layout {
     flex-direction: row;
-    gap: 2.5rem;
+    gap: clamp(2.5rem, 5vw, 7rem);
     align-items: flex-start;
   }
 
@@ -164,12 +168,34 @@
     position: sticky;
     top: 7rem;
     align-self: flex-start;
-    max-width: 40rem;
-    flex: 0 0 42%;
+    max-width: 100%;
+    flex: 0 1 42%;
   }
 
   .timelineWrap {
-    width: 58%;
-    padding-left: 1.25rem;
+    flex: 1 1 58%;
+    padding-left: clamp(1.25rem, 2vw, 2.5rem);
+  }
+}
+
+@media (min-width: 120rem) {
+  .shell {
+    padding-inline: clamp(4rem, 7vw, 9rem);
+  }
+
+  .layout {
+    gap: clamp(4rem, 6vw, 9rem);
+  }
+
+  .intro {
+    flex-basis: 44%;
+  }
+
+  .timelineWrap {
+    flex-basis: 56%;
+  }
+
+  .description {
+    max-width: 52rem;
   }
 }

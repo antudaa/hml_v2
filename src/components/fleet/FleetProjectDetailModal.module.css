@@ -1,0 +1,41 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.closeButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1010;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border: 0;
+  border-radius: 999rem;
+  background: rgb(255 255 255 / 90%);
+  color: #094d82;
+  box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 18%);
+  cursor: pointer;
+}
+
+.closeIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.inner {
+  min-height: 100svh;
+  background: #fff;
+}
+
+@media (min-width: 48rem) {
+  .closeButton {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}

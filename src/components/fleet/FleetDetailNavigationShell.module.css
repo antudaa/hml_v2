@@ -1,0 +1,85 @@
+.closeButton {
+  position: fixed;
+  top: 15%;
+  right: 1rem;
+  z-index: 60;
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 0.0625rem solid rgb(9 77 130 / 20%);
+  border-radius: 999rem;
+  background: #fff;
+  color: #094d82;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 12%);
+  transition: background-color 160ms ease;
+}
+
+.closeButton:hover {
+  background: #f3f8fc;
+}
+
+.closeIcon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.navRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 5% 0;
+}
+
+.arrowLink {
+  display: flex;
+  align-items: center;
+}
+
+.wave {
+  animation: fleetWave 2s infinite ease-in-out;
+}
+
+.arrowStrong,
+.arrowMid,
+.arrowLight {
+  width: clamp(2rem, 2vw + 1rem, 4.5rem);
+  height: clamp(2rem, 2vw + 1rem, 4.5rem);
+}
+
+.arrowStrong {
+  color: rgb(9 78 130 / 74%);
+}
+
+.arrowMid {
+  margin-left: -1.4rem;
+  color: rgb(9 78 130 / 50%);
+}
+
+.arrowLight {
+  margin-left: -1.4rem;
+  color: rgb(9 78 130 / 30%);
+}
+
+.arrowLink .arrowLight:first-child,
+.arrowLink .arrowMid:first-child,
+.arrowLink .arrowStrong:first-child {
+  margin-left: 0;
+}
+
+@keyframes fleetWave {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0.3rem);
+  }
+}
+
+@media (min-width: 48rem) {
+  .closeButton {
+    right: 5%;
+  }
+}

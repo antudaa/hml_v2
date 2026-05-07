@@ -27,6 +27,8 @@ export function Navbar() {
     normalizedPath === "/about" ||
     normalizedPath.startsWith("/media") ||
     normalizedPath.startsWith("/news-events");
+  const isFleetActive =
+    normalizedPath === "/fleet" || normalizedPath.startsWith("/fleet/");
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -81,7 +83,9 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={navItemClassName(false)}
+                  className={navItemClassName(
+                    item.href === "/fleet" ? isFleetActive : false,
+                  )}
                 >
                   {item.label}
                 </Link>
@@ -148,7 +152,14 @@ export function Navbar() {
             {mainNavigation.map((item) => (
               <li key={item.href} className="mt-4">
                 <Link href={item.href} onClick={() => setIsOpen(false)}>
-                  <span className="text-base font-semibold uppercase tracking-[0.08em] text-black transition-colors duration-300 hover:text-[#0e3d61]">
+                  <span
+                    className={cn(
+                      "text-base font-semibold uppercase tracking-[0.08em] transition-colors duration-300",
+                      item.href === "/fleet" && isFleetActive
+                        ? "text-primary"
+                        : "text-black hover:text-[#0e3d61]",
+                    )}
+                  >
                     {item.label}
                   </span>
                 </Link>

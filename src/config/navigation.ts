@@ -15,6 +15,10 @@ export const aboutNavigation = [
 
 export const mainNavigation = [
   {
+    label: "FLEET",
+    href: "/fleet",
+  },
+  {
     label: "SERVICES",
     href: "#services",
   },
