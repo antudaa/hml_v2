@@ -1,0 +1,80 @@
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgb(9 77 130 / 78%), rgb(9 77 130 / 18%) 48%, rgb(0 0 0 / 16%));
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.subtitle {
+  margin: 0 0 0.375rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 78%);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.details {
+  overflow: hidden;
+  transition:
+    max-height 320ms ease,
+    opacity 320ms ease,
+    transform 320ms ease;
+}
+
+.detailsHidden {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(0.75rem);
+}
+
+.detailsVisible {
+  max-height: 12rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.description {
+  margin: 0.875rem 0 0;
+  max-width: 34rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 92%);
+}
+
+@media (min-width: 64rem) {
+  .content {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 1.875rem;
+  }
+}

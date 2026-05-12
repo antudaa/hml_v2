@@ -7,6 +7,35 @@
   padding: 2rem 0 3rem;
 }
 
+@media (max-width: 63.999rem) and (max-height: 43.75rem) {
+  .section {
+    justify-content: flex-start;
+    padding-top: calc(var(--site-header-height) + 1rem);
+    padding-bottom: 2rem;
+  }
+
+  .header {
+    gap: 0.75rem;
+  }
+
+  .heading {
+    margin-bottom: 0.25rem;
+  }
+
+  .headingTop {
+    font-size: 1.1rem;
+  }
+
+  .headingBottom {
+    font-size: 1.55rem;
+    line-height: 1;
+  }
+
+  .timelineOuter {
+    padding-block: 0.875rem;
+  }
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -191,6 +220,12 @@
   aspect-ratio: 1 / 1.4;
 }
 
+@media (max-width: 47.999rem) {
+  .cardMedia {
+    aspect-ratio: 1 / 1.2;
+  }
+}
+
 .cardImage {
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -203,6 +238,7 @@
 .cardCopy {
   padding: 0.5rem 0.25rem 0;
   font-size: 0.875rem;
+  line-height: 1.25;
   text-transform: uppercase;
 }
 
@@ -378,5 +414,34 @@
 
   .headingBottom {
     font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 64rem) and (max-height: 43.75rem) {
+  .section {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .header {
+    margin-top: 5vh;
+  }
+
+  .timelineOuter {
+    padding-block: 1rem;
+  }
+
+  .carousel {
+    padding-top: 0.25rem;
+  }
+
+  .cardMedia {
+    aspect-ratio: 1 / 1.12;
+  }
+
+  .cardCopy {
+    padding-top: 0.4rem;
+    font-size: 0.8rem;
+    line-height: 1.15;
   }
 }

@@ -1,0 +1,14 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.workflowOffset {
+  margin-top: -1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .workflowOffset {
+    margin-top: -3rem;
+  }
+}

@@ -1,0 +1,47 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.spacer {
+  height: 0;
+}
+
+.topRow,
+.bottomRow {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  transition: all 500ms ease;
+}
+
+.topRow {
+  margin-top: 4rem;
+}
+
+.panel {
+  min-width: 0;
+  transition: flex 500ms ease;
+}
+
+.panelEqual {
+  flex: 1 1 0;
+}
+
+.panelTopExpanded,
+.panelBottomExpanded {
+  flex: 2 1 0;
+}
+
+.panelBottomCollapsed {
+  flex: 0.5 1 0;
+}
+
+@media (min-width: 48rem) {
+  .topRow {
+    margin-top: 5rem;
+  }
+}

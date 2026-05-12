@@ -3,17 +3,16 @@
 import Image from "next/image";
 import { useState } from "react";
 import { siteConfig } from "@/config/site";
-import { Button } from "@/components/ui/button";
 import styles from "./OurCargoExpertise.module.css";
+
+function truncateForMobile(text: string, maxChars: number) {
+  if (text.length <= maxChars) return text;
+  return `${text.slice(0, maxChars).trimEnd()}...`;
+}
 
 export function OurCargoExpertise() {
   const { cargoExpertise } = siteConfig;
   const [hoverIndex, setHoverIndex] = useState(0);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-  const toggleExpand = (index: number) => {
-    setExpandedIndex((prev) => (prev === index ? null : index));
-  };
 
   return (
     <section className={styles.section} id={cargoExpertise.sectionId}>
@@ -30,7 +29,6 @@ export function OurCargoExpertise() {
 
         {cargoExpertise.items.map((item, index) => {
           const isHovered = hoverIndex === index;
-          const isExpanded = expandedIndex === index;
 
           return (
             <div
@@ -67,21 +65,13 @@ export function OurCargoExpertise() {
                   }`}
                 >
                   <p className={styles.description}>
-                    {isExpanded ? item.viewMore : item.subtitle}
+                    <span className={styles.mobileDescription}>
+                      {truncateForMobile(item.subtitle, 400)}
+                    </span>
+                    <span className={styles.desktopDescription}>
+                      {item.subtitle}
+                    </span>
                   </p>
-
-                  <div className={styles.buttonRow}>
-                    <Button
-                      className={styles.actionButton}
-                      onClick={(event) => {
-                        event.stopPropagation();
-                        toggleExpand(index);
-                      }}
-                      variant="outline"
-                    >
-                      {isExpanded ? "Show Less" : "Discover More"}
-                    </Button>
-                  </div>
                 </div>
               </div>
             </div>

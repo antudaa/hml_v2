@@ -1,33 +1,18 @@
-export const aboutNavigation = [
-  {
-    label: "ABOUT US",
-    href: "/about",
-  },
-  {
-    label: "MEDIA",
-    href: "/media",
-  },
-  {
-    label: "NEWS",
-    href: "/news-events",
-  },
-] as const;
-
 export const mainNavigation = [
   {
     label: "FLEET",
     href: "/fleet",
   },
   {
-    label: "SERVICES",
-    href: "#services",
+    label: "PROJECTS",
+    href: "/projects",
   },
   {
-    label: "TESTIMONIALS",
-    href: "#testimonials",
+    label: "ENGINEERING",
+    href: "/engineering",
   },
   {
-    label: "CONTACT",
-    href: "#contact",
+    label: "CONTACT US",
+    href: "/contact",
   },
 ] as const;

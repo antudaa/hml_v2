@@ -92,15 +92,10 @@
   }
 }
 
-@media (max-width: 30rem), (max-height: 43rem) {
-  .section,
-  .contentWrap {
-    min-height: auto;
-  }
-
+@media (max-width: 30rem) {
   .contentWrap {
     justify-content: flex-end;
-    padding-top: 5.5rem;
+    padding-top: calc(var(--site-header-height) + 1rem);
     padding-bottom: 2rem;
   }
 
@@ -119,5 +114,40 @@
 
   .paragraph + .paragraph {
     margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 47.999rem) and (max-height: 37.5rem) {
+  .section,
+  .contentWrap {
+    min-height: calc(100svh - var(--site-header-height));
+  }
+
+  .contentWrap {
+    justify-content: flex-end;
+    padding-top: calc(var(--site-header-height) + 1rem);
+    padding-bottom: 1.5rem;
+  }
+
+  .panel {
+    padding: 1.125rem 1rem 1.25rem;
+  }
+
+  .heading {
+    font-size: clamp(1.4rem, 1rem + 1.4vw, 2rem);
+    line-height: 1.08;
+  }
+
+  .copy {
+    margin-top: 0.75rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+    line-height: 1.48;
+  }
+
+  .paragraph + .paragraph {
+    margin-top: 0.625rem;
   }
 }

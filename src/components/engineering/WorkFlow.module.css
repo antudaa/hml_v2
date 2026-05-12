@@ -1,0 +1,295 @@
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.spacer {
+  height: 60px;
+}
+
+.content {
+  margin-top: 2.5rem;
+}
+
+.headerWrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 1vw;
+}
+
+.backgroundTitle {
+  position: absolute;
+  margin: 0;
+  padding: 0 1rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #bfcde2;
+  opacity: 0.4;
+  white-space: nowrap;
+}
+
+.foregroundTitle {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  margin: 3.5vh 0 0;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #094d82;
+  white-space: nowrap;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 1rem;
+  padding-top: 2.5rem;
+  padding-inline: 1rem;
+}
+
+.card {
+  position: relative;
+  width: 100vw;
+  height: 350px;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: #094d82;
+}
+
+.evenlyColumn,
+.betweenColumn {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.evenlyColumn {
+  justify-content: space-evenly;
+}
+
+.betweenColumn {
+  justify-content: space-between;
+}
+
+.serialNo {
+  margin: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 3.75rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+}
+
+.list {
+  margin: 0;
+  padding: 0 1rem;
+  list-style: none;
+  font-weight: 300;
+  color: #fff;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 12px;
+}
+
+.listItemCardFour {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.listItem + .listItem,
+.listItemCardFour + .listItemCardFour {
+  margin-top: 0;
+}
+
+.listDash {
+  display: inline-block;
+  width: 1rem;
+  height: 0.25rem;
+  background: #fff;
+}
+
+.softwareLabel {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.softwareValue {
+  margin: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.sideTitle {
+  position: absolute;
+  margin: 0 -0.6rem;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.875rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.sideTitleHighlight {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 500;
+
+}
+
+.cardOneTitle {
+  top: 1.25rem;
+  right: 1rem;
+}
+
+.cardTwoTitle {
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.cardThreeTitle {
+  top: 1.25rem;
+  right: 1rem;
+}
+
+.cardFourTitle {
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.cardFiveTitle {
+  top: 1.25rem;
+  right: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .spacer {
+    height: 0;
+  }
+
+  .headerWrap {
+    flex-direction: column;
+  }
+
+  .backgroundTitle {
+    font-size: 13vw;
+  }
+
+  .foregroundTitle {
+    margin-top: 5vh;
+    margin-left: 2vw;
+    font-size: 3rem;
+  }
+
+  .cards {
+    padding-inline: 0;
+  }
+
+  .card {
+    width: 45vw;
+  }
+
+  .sideTitle {
+    transform: rotate(-90deg);
+  }
+
+  .sideTitleHighlight {
+    color: #094d82;
+  }
+
+  .cardOneTitle {
+    top: 4rem;
+    right: -84px;
+  }
+
+  .cardTwoTitle {
+    right: -90px;
+    bottom: 5rem;
+  }
+
+  .cardThreeTitle {
+    top: 4rem;
+    right: -60px;
+  }
+
+  .cardFourTitle {
+    right: -90px;
+    bottom: 5rem;
+  }
+
+  .cardFiveTitle {
+    top: 6rem;
+    right: -80px;
+  }
+}
+
+@media (min-width: 64rem) {
+  .content {
+    margin-top: 5rem;
+  }
+
+  .foregroundTitle {
+    margin-top: 8vh;
+    margin-left: 4vw;
+    font-size: 3.75rem;
+  }
+
+  .card {
+    width: 17vw;
+  }
+
+  .softwareLabel {
+    font-size: 1rem;
+  }
+
+  .softwareValue {
+    font-size: 0.875rem;
+  }
+
+  .listItemCardFour {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 96rem) {
+  .content {
+    margin-top: 6rem;
+  }
+
+  .card {
+    height: 570px;
+  }
+
+  .serialNo {
+    font-size: 5rem;
+  }
+
+  .listItem {
+    font-size: 0.875rem;
+  }
+}

@@ -26,7 +26,7 @@
 
 .mobileHeader {
   position: sticky;
-  top: 0;
+  top: var(--site-header-height);
   z-index: 20;
   display: flex;
   align-items: center;
@@ -49,6 +49,16 @@
   flex: 1;
   flex-direction: column;
   overflow: hidden;
+}
+
+@media (max-width: 63.999rem) and (max-height: 43.75rem) {
+  .mobileHeader {
+    padding-block: 0.875rem;
+  }
+
+  .mobileHeaderText {
+    font-size: 0.95rem;
+  }
 }
 
 .panel {
@@ -138,6 +148,14 @@
   text-shadow:
     2px 0 0 rgb(0 0 0 / 100%),
     0 1px 4px rgb(0 0 0 / 85%);
+}
+
+.mobileDescription {
+  display: inline;
+}
+
+.desktopDescription {
+  display: none;
 }
 
 .buttonRow {
@@ -238,5 +256,13 @@
     max-width: 80rem;
     max-height: 18.75rem;
     font-size: 1.125rem;
+  }
+
+  .mobileDescription {
+    display: none;
+  }
+
+  .desktopDescription {
+    display: inline;
   }
 }

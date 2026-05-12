@@ -1,5 +1,33 @@
 .section {
   font-family: "Helvetica Neue Local", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-block: 1rem;
+}
+
+@media (max-width: 63.999rem) {
+  .section {
+    padding-block: 1.75rem 2rem;
+  }
+
+  .shell {
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 63.999rem) and (max-height: 43.75rem) {
+  .section {
+    padding-block: 2rem 2.25rem;
+  }
+
+  .shell {
+    padding-top: calc(var(--site-header-height) + 1.5rem);
+    padding-bottom: 3rem;
+  }
+
+  .board {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .shell {
@@ -13,6 +41,7 @@
 }
 
 .heading {
+  padding-top: 0.75rem;
   color: #094d82;
   font-size: 1.5rem;
   font-weight: 900;
@@ -25,6 +54,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 1.25rem;
+  padding-top: 0.75rem;
   margin-top: 1.5rem;
   color: #7a8ea3;
   font-size: 0.75rem;
@@ -292,5 +322,20 @@
 
   .copy {
     margin-left: 3rem;
+  }
+}
+
+@media (min-width: 64rem) and (max-height: 43.75rem) {
+  .section {
+    padding-block: 1.5rem;
+  }
+
+  .shell {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .board {
+    margin-top: 1.25rem;
   }
 }

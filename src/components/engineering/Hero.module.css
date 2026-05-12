@@ -1,0 +1,53 @@
+.section {
+  position: relative;
+  width: 100%;
+}
+
+.mediaWrap {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.imageFade {
+  position: absolute;
+  inset: 0;
+  transition: opacity 1s ease;
+}
+
+.imageLoading {
+  opacity: 0;
+}
+
+.imageLoaded {
+  opacity: 1;
+}
+
+.image {
+  object-fit: cover;
+  object-position: top;
+}
+
+.loaderOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.25rem solid #fff;
+  border-top-color: transparent;
+  border-radius: 999rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

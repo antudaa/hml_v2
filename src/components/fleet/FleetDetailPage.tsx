@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { DownloadIcon } from "@/components/ui/icons";
 import type { FleetItem } from "@/data/fleet";
 import { getFleetSpecifications } from "@/data/fleet";
 import { FleetAssetImage } from "./FleetAssetImage";
@@ -60,7 +59,6 @@ export function FleetDetailPage({
                   rel="noreferrer"
                   target="_blank"
                 >
-                  <DownloadIcon className={styles.downloadIcon} />
                   Download GA
                 </a>
               </div>

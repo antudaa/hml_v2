@@ -76,7 +76,7 @@
   --accent: 39 49% 57%;
   --accent-foreground: 206 71% 14%;
   --hero-overlay: 0 0% 0%;
-  --site-header-height: 6rem;
+  --site-header-height: 4rem;
   --home-viewport-height: calc(100svh - var(--site-header-height));
 }
 
@@ -209,7 +209,7 @@ b {
 }
 
 section[id] {
-  scroll-margin-top: 6rem;
+  scroll-margin-top: 4rem;
 }
 
 ::selection {
@@ -236,7 +236,7 @@ section[id] {
 
 @media (min-width: 96rem) {
   :root {
-    --site-header-height: 8rem;
+    --site-header-height: 6rem;
   }
 
   html {

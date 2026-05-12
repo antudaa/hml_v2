@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { AppShell } from "@/components/layout/AppShell";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -28,11 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="min-h-full font-sans">
-        <div className="relative flex min-h-screen flex-col overflow-x-clip">
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

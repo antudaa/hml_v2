@@ -1,0 +1,213 @@
+.page {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.heroSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background: #0b2d4a;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 30%);
+}
+
+.heroCloseWrap {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+.heroCloseButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgb(255 255 255 / 0.75);
+  background: rgb(255 255 255 / 0.16);
+  color: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.heroCloseButton:hover {
+  background: rgb(255 255 255 / 0.24);
+  border-color: rgb(255 255 255 / 0.95);
+  transform: translateY(-1px);
+}
+
+.heroCloseButton :global(svg) {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.heroTitleWrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 1rem 2rem;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.storySection {
+  flex: 1;
+  background: #094d82;
+  color: #fff;
+}
+
+.storyInner {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 2.5rem 1rem;
+}
+
+.storyIntro {
+  margin-bottom: 1rem;
+}
+
+.storyName {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 80%);
+}
+
+.storyDescription {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  color: rgb(255 255 255 / 70%);
+}
+
+.storyHeadingRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.storyHeading {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.storyLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.storyBody {
+  width: 100%;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  white-space: pre-line;
+  color: rgb(255 255 255 / 90%);
+}
+
+.metaList {
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+.metaItem {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.metaItem + .metaItem {
+  margin-top: 0.75rem;
+}
+
+.metaLabel {
+  width: 5rem;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.metaValue {
+  color: rgb(255 255 255 / 90%);
+}
+
+@media (min-width: 40rem) {
+  .heroCloseWrap {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .heroTitleWrap {
+    padding-inline: 2rem;
+  }
+
+  .heroTitle {
+    font-size: 1.875rem;
+  }
+
+  .storyInner {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .heroCloseWrap {
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .heroTitleWrap {
+    padding-inline: 3rem;
+  }
+
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .storyInner {
+    padding: 3.5rem 2rem;
+  }
+
+  .storyLayout {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  .storyBody {
+    width: 50%;
+  }
+
+  .metaList {
+    width: 50%;
+  }
+}

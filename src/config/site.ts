@@ -232,7 +232,7 @@ export const siteConfig = {
     eyebrow: "The Icon of",
     title: "HEAVY MARINE LOGISTICS",
     videoMp4:
-      "https://res.cloudinary.com/dl28pqkb2/video/upload/v1768561030/Landing_Video_Ver_6._3_tnmbaw.mp4",
+      "https://res.cloudinary.com/druseaf0p/video/upload/v1778574576/Landing_Video_Ver_6._3_qwbqdf.mp4",
     videoWebm:
       "https://res.cloudinary.com/dl28pqkb2/video/upload/v1768561030/Landing_Video_Ver_6._3_tnmbaw.mp4",
     posterImage:

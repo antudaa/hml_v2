@@ -1,6 +1,8 @@
 .viewport {
-  height: var(--home-viewport-height);
-  min-height: var(--home-viewport-height);
+  box-sizing: border-box;
+  height: 100svh;
+  min-height: 100svh;
+  margin-top: calc(-1 * var(--site-header-height));
   overflow-y: auto;
   scroll-snap-type: y proximity;
   -webkit-overflow-scrolling: touch;
@@ -9,8 +11,8 @@
 .panel {
   display: block;
   width: 100%;
-  height: var(--home-viewport-height);
-  min-height: var(--home-viewport-height);
+  height: 100svh;
+  min-height: 100svh;
   overflow: hidden;
   scroll-snap-align: start;
   scroll-snap-stop: always;

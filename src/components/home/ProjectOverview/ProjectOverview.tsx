@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   useCallback,
   useEffect,
@@ -13,7 +14,6 @@ import {
   ChevronRightIcon,
 } from "@/components/ui/icons";
 import { siteConfig } from "@/config/site";
-import { ProjectDetailModal } from "./ProjectDetailModal";
 import styles from "./ProjectOverview.module.css";
 import type { ProjectOverviewItem } from "./types";
 
@@ -104,8 +104,6 @@ export function HomeProjectOverview() {
 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const [selectedProject, setSelectedProject] =
-    useState<ProjectOverviewItem | null>(null);
 
   const availableYearsAsc = useMemo(() => {
     const years = new Set<number>();
@@ -314,11 +312,10 @@ export function HomeProjectOverview() {
             data-year={project.__year != null ? String(project.__year) : ""}
             key={project.id}
           >
-            <button
-              aria-label={`Open project details for ${project.name}`}
+            <Link
+              aria-label={`Open project page for ${project.name}`}
               className={styles.cardButton}
-              onClick={() => setSelectedProject(project)}
-              type="button"
+              href={`/projects/${project.id}`}
             >
               <div className={styles.cardMedia}>
                 <ProjectCardImage
@@ -334,15 +331,10 @@ export function HomeProjectOverview() {
                   {project.description}
                 </span>
               </p>
-            </button>
+            </Link>
           </div>
         ))}
       </div>
-
-      <ProjectDetailModal
-        onClose={() => setSelectedProject(null)}
-        project={selectedProject}
-      />
     </section>
   );
 }

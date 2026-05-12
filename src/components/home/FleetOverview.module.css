@@ -141,7 +141,7 @@
 
 .vesselLink {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 0.95rem;
@@ -154,14 +154,16 @@
 }
 
 .vesselLink:hover {
-  text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
 .shipIcon {
-  margin-top: 0.125rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0;
   margin-right: 0.5rem;
   flex-shrink: 0;
+  transform: translateY(-0.1rem);
 }
 
 .separator {
@@ -226,10 +228,54 @@
   }
 
   .shipIcon {
-    margin-top: 0.25rem;
+    margin-top: 0;
   }
 
   .separator {
     display: block;
+  }
+}
+
+@media (min-width: 64rem) and (max-height: 43.75rem) {
+  .content {
+    padding-top: 3.25rem;
+  }
+
+  .heading {
+    margin-top: 4.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .headingTop {
+    font-size: 2.5rem;
+  }
+
+  .headingBottom {
+    font-size: 3.75rem;
+  }
+
+  .titleRow {
+    margin-bottom: 0;
+  }
+
+  .groupTitle {
+    padding-block: 0.45rem;
+  }
+
+  .vesselBand {
+    height: 3.5rem;
+    min-height: 3.5rem;
+    gap: 0.75rem;
+    padding-block: 0.75rem;
+  }
+
+  .vesselLink {
+    font-size: 0.92rem;
+  }
+
+  .separator {
+    align-self: center;
+    height: 2rem;
+    margin-inline: 0.75rem;
   }
 }
